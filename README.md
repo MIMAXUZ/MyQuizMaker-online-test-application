@@ -23,6 +23,7 @@ You will have to answer the questions and the answers will be announced at the e
 * Extract .zip file
 * Open VIsual Studio
 * file -> open -> project and select the project
+* Upade model to your server configuration. (Default server name (.))
 ### For SQL Server
 * Download it in .ZIP file
 * Extract .zip file
