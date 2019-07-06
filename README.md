@@ -1,4 +1,4 @@
-# MyQuizMaker---C-SQL-Server-online-test-application
+# MyQuizMaker - C# & SQL Server online test application
 
 [![Build Status](https://dev.azure.com/dnceng/internal/_apis/build/status/dotnet/corefx/corefx-official?branchName=master)](https://dev.azure.com/dnceng/internal/_build/latest?definitionId=283&branchName=master)
 
