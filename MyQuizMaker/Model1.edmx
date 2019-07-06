@@ -1,0 +1,238 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="MQuizDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="question_answers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="answer" Type="text" Nullable="false" />
+          <Property Name="is_correct" Type="int" />
+        </EntityType>
+        <EntityType Name="questions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quiz_id" Type="int" Nullable="false" />
+          <Property Name="question" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="question_difficulty" Type="bit" />
+          <Property Name="multianswer" Type="bit" />
+        </EntityType>
+        <EntityType Name="quizs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="quiz_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="quiz_desc" Type="text" />
+        </EntityType>
+        <EntityType Name="user_answers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="answer_id" Type="int" Nullable="false" />
+          <Property Name="start_from" Type="time" Precision="7" />
+          <Property Name="start_to" Type="time" Precision="7" />
+        </EntityType>
+        <EntityType Name="user_statistics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" Nullable="false" />
+          <Property Name="question_id" Type="int" Nullable="false" />
+          <Property Name="correct_answers" Type="int" />
+          <Property Name="incorrect_answers" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="username" Type="nvarchar" MaxLength="30" Nullable="false" />
+          <Property Name="first_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="last_name" Type="nvarchar" MaxLength="50" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MQuizDBModelStoreContainer">
+          <EntitySet Name="question_answers" EntityType="Self.question_answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="questions" EntityType="Self.questions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="quizs" EntityType="Self.quizs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_answers" EntityType="Self.user_answers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="user_statistics" EntityType="Self.user_statistics" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MQuizDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="question_answers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="question_id" Type="Int32" Nullable="false" />
+          <Property Name="answer" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="is_correct" Type="Int32" />
+        </EntityType>
+        <EntityType Name="questions">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quiz_id" Type="Int32" Nullable="false" />
+          <Property Name="question" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="question_difficulty" Type="Boolean" />
+          <Property Name="multianswer" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="quizs">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="quiz_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="quiz_desc" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="user_answers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="question_id" Type="Int32" Nullable="false" />
+          <Property Name="answer_id" Type="Int32" Nullable="false" />
+          <Property Name="start_from" Type="Time" Precision="7" />
+          <Property Name="start_to" Type="Time" Precision="7" />
+        </EntityType>
+        <EntityType Name="user_statistics">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" Nullable="false" />
+          <Property Name="question_id" Type="Int32" Nullable="false" />
+          <Property Name="correct_answers" Type="Int32" />
+          <Property Name="incorrect_answers" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="username" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="last_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="MQuizDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="question_answers" EntityType="Self.question_answers" />
+          <EntitySet Name="questions" EntityType="Self.questions" />
+          <EntitySet Name="quizs" EntityType="Self.quizs" />
+          <EntitySet Name="user_answers" EntityType="Self.user_answers" />
+          <EntitySet Name="user_statistics" EntityType="Self.user_statistics" />
+          <EntitySet Name="Users" EntityType="Self.Users" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MQuizDBModelStoreContainer" CdmEntityContainer="MQuizDBEntities">
+          <EntitySetMapping Name="question_answers">
+            <EntityTypeMapping TypeName="MQuizDBModel.question_answers">
+              <MappingFragment StoreEntitySet="question_answers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="answer" ColumnName="answer" />
+                <ScalarProperty Name="is_correct" ColumnName="is_correct" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="questions">
+            <EntityTypeMapping TypeName="MQuizDBModel.questions">
+              <MappingFragment StoreEntitySet="questions">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="quiz_id" ColumnName="quiz_id" />
+                <ScalarProperty Name="question" ColumnName="question" />
+                <ScalarProperty Name="question_difficulty" ColumnName="question_difficulty" />
+                <ScalarProperty Name="multianswer" ColumnName="multianswer" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="quizs">
+            <EntityTypeMapping TypeName="MQuizDBModel.quizs">
+              <MappingFragment StoreEntitySet="quizs">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="quiz_name" ColumnName="quiz_name" />
+                <ScalarProperty Name="quiz_desc" ColumnName="quiz_desc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_answers">
+            <EntityTypeMapping TypeName="MQuizDBModel.user_answers">
+              <MappingFragment StoreEntitySet="user_answers">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="answer_id" ColumnName="answer_id" />
+                <ScalarProperty Name="start_from" ColumnName="start_from" />
+                <ScalarProperty Name="start_to" ColumnName="start_to" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="user_statistics">
+            <EntityTypeMapping TypeName="MQuizDBModel.user_statistics">
+              <MappingFragment StoreEntitySet="user_statistics">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="question_id" ColumnName="question_id" />
+                <ScalarProperty Name="correct_answers" ColumnName="correct_answers" />
+                <ScalarProperty Name="incorrect_answers" ColumnName="incorrect_answers" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="MQuizDBModel.Users">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="username" ColumnName="username" />
+                <ScalarProperty Name="first_name" ColumnName="first_name" />
+                <ScalarProperty Name="last_name" ColumnName="last_name" />
+                <ScalarProperty Name="password" ColumnName="password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
