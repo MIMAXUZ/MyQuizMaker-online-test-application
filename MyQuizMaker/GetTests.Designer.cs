@@ -30,9 +30,9 @@
         {
             this.TopPanel = new System.Windows.Forms.Panel();
             this.scoreLbl = new System.Windows.Forms.Label();
-            this.final = new System.Windows.Forms.Label();
             this.DashboardLabel = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.final = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.q_text = new System.Windows.Forms.Label();
             this.AnswerA = new MyQuizMaker.Style.ShapedButton();
@@ -62,21 +62,9 @@
             this.scoreLbl.ForeColor = System.Drawing.Color.Black;
             this.scoreLbl.Location = new System.Drawing.Point(440, 20);
             this.scoreLbl.Name = "scoreLbl";
-            this.scoreLbl.Size = new System.Drawing.Size(71, 20);
+            this.scoreLbl.Size = new System.Drawing.Size(69, 20);
             this.scoreLbl.TabIndex = 17;
-            this.scoreLbl.Text = "Achkolar";
-            // 
-            // final
-            // 
-            this.final.AutoSize = true;
-            this.final.BackColor = System.Drawing.Color.Transparent;
-            this.final.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
-            this.final.ForeColor = System.Drawing.Color.White;
-            this.final.Location = new System.Drawing.Point(46, 24);
-            this.final.Name = "final";
-            this.final.Size = new System.Drawing.Size(51, 24);
-            this.final.TabIndex = 0;
-            this.final.Text = "Final";
+            this.scoreLbl.Text = "Correct: ";
             // 
             // DashboardLabel
             // 
@@ -97,6 +85,18 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(30, 30);
             this.panel1.TabIndex = 2;
+            // 
+            // final
+            // 
+            this.final.AutoSize = true;
+            this.final.BackColor = System.Drawing.Color.Transparent;
+            this.final.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F);
+            this.final.ForeColor = System.Drawing.Color.White;
+            this.final.Location = new System.Drawing.Point(46, 24);
+            this.final.Name = "final";
+            this.final.Size = new System.Drawing.Size(51, 24);
+            this.final.TabIndex = 0;
+            this.final.Text = "Final";
             // 
             // panel5
             // 
