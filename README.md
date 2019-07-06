@@ -28,8 +28,20 @@ You will have to answer the questions and the answers will be announced at the e
 * Extract .zip file
 * Open SSMS or DBForge For SQL Server
 * Right click on databases -> Restore Database and restore downloaded database (Database file in .bak file)
+
 ## Screenshots
-![Location of Add to Source Control option in the file menu](images/add-to-source-control.png)
+1. Press F5 or CTRL + F5 to start the program.
+
+![Launch of main menu MyQuizMaker](main_menu_screenshot.png )
+
+2. Press Starting test for start test.
+
+![When started this app](started_screenshot.png)
+
+3. The following window will appear after the tests are completed.
+
+![When Finished this app](finished.png )
+
 
 ## About Creator
 - Created By O'ktam Yaqubov (MIMAXUZ)
